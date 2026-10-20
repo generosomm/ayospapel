@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets/thermal-paper.jpg",
+    "title": "Thermal paper",
+    "creator": "IIVQ - Tijmen Stam",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=804449",
+    "credit": "\"Thermal paper\" by IIVQ - Tijmen Stam, CC BY-SA 3.0, via Wikimedia Commons",
+    "notes": [
+      "Resized and cropped only."
+    ]
+  },
+  {
+    "file": "assets/sari-sari-cavite.jpg",
+    "title": "Sari-Sari Store Cavite",
+    "creator": "Glen from United States",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=15580008",
+    "credit": "\"Sari-Sari Store Cavite\" by Glen from United States, CC BY 2.0, via Wikimedia Commons",
+    "notes": [
+      "Resized and cropped only."
+    ]
+  },
+  {
+    "file": "assets/sari-sari-typical.jpg",
+    "title": "Typical sari-sari store",
+    "creator": "John Martin Perry",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Typical_sari-sari_store.jpg",
+    "credit": "\"Typical sari-sari store\" by John Martin Perry, CC BY-SA 3.0, via Wikimedia Commons",
+    "notes": [
+      "Resized and cropped only."
+    ]
+  },
+  {
+    "file": "assets/bir-building.jpg",
+    "title": "Bureau of Internal Revenue (Philippines) Building 40",
+    "creator": "Video13",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Bureau_of_Internal_Revenue_(Philippines)_Building_40.jpg",
+    "credit": "\"Bureau of Internal Revenue (Philippines) Building 40\" by Video13, CC BY-SA 4.0, via Wikimedia Commons",
+    "notes": [
+      "Resized and cropped only."
+    ]
+  }
+]

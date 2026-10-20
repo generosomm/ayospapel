@@ -112,3 +112,19 @@ Launch inputs:
 ## Phase 5 - Handover
 - Record version, known limitations, credentials ownership, support window, and future backlog.
 - Start future features from a fresh AI session using the handoff prompt and only relevant context.
+
+## Current roadmap (2026-10-20, awaiting approval)
+
+Continuing from pilot v0.3.1 (baseline commit `a4d7632`). Infrastructure
+decision: `docs/decisions/0004-supabase-infrastructure-adapter.md`.
+
+| # | Milestone | Acceptance checks |
+| --- | --- | --- |
+| M0 | Baseline commit | Done: `a4d7632` on `main`; `npm run check` passed. |
+| M1 | Async repository + Postgres adapter + migrations | Repository interface returns Promises; `database/migrations/0001_init.sql` creates the `app` schema with RLS enabled; the 6 existing tests pass on PGlite; `db:reset` seeds synthetic data; SQLite adapter removed. |
+| M2 | Supabase Storage adapter | Uploads go to a private bucket by opaque key; download still denied for unassigned staff and other clients; tests use a storage fake; one manual run against a synthetic dev project (only after approval to create it). |
+| M3 | Split `App.tsx` + custody transfer | UI split into pages/components without behavior change; staff move a physical batch to a new location/custodian; previous custody kept in history; audit event written; client contacts and unassigned staff denied; released/archived batches rejected. |
+| M4 | Status update + release/return | Staff move batches through allowed transitions (ADR 0002); release requires `ready_for_return`; release record stores method, receiver name, relationship/authority, releasing staff, time, acknowledgement method; release is immutable; printable release acknowledgement; denied/invalid cases tested. |
+
+Order rationale: building custody/release on SQLite first would mean porting it
+right after, so the data layer moves first.

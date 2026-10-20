@@ -12,6 +12,12 @@ creating parallel UI primitives.
 
 This repository follows the Zero to Deploy project contract. Start with `START_HERE.md`, approve all files in `context/`, and follow `docs/BUILD_PLAN.md`.
 
+## Proposal landing page
+
+`landing/` is a separate static page used to pitch the system
+(live at https://ayospapel.vercel.app). It has no build step; see
+`landing/README.md`.
+
 ## Quick start
 1. Install Node.js 24.
 2. Run `npm.cmd install`.

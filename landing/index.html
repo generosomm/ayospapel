@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" class="no-3d">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AyosPapel | Resibo in, SLSP out</title>
+  <meta name="description" content="Picture a receipt and AyosPapel reads the TIN, store, and VAT. At quarter end your Summary List of Sales and Purchases is already done.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EEF1F4">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="scene" aria-hidden="true"></canvas>
+
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="brand" href="#top" aria-label="AyosPapel home">
+        <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="8" width="26" height="18" rx="3" fill="#D8B878"/><path d="M3.5 9.5 16 18l12.5-8.5" fill="none" stroke="#9C7A3C" stroke-width="1.6"/><circle cx="23" cy="22" r="6" fill="#2B44C9"/><path d="m20.4 22 1.8 1.8 3.4-3.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>AyosPapel</span>
+      </a>
+      <nav aria-label="Sections">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#faq">Questions</a>
+      </nav>
+      <a class="btn btn-small" href="#try">Try a receipt</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <h1 id="hero-title" class="sentence" aria-label="Resibo in, SLSP out.">
+          <span class="line" aria-hidden="true"><span class="line-in">Resibo <span class="slot"><span class="scan"></span></span> in,</span></span>
+          <span class="line" aria-hidden="true"><span class="line-in">SLSP out.</span></span>
+        </h1>
+
+        <ul class="chips" aria-label="What AyosPapel read from the receipt">
+          <li class="chip chip-a" data-ui><span class="chip-k">TIN</span><span class="chip-v">008-271-456-000</span><span class="tick" aria-hidden="true"></span></li>
+          <li class="chip chip-b" data-ui><span class="chip-k">VAT</span><span class="chip-v">₱107.14</span><span class="tick" aria-hidden="true"></span></li>
+          <li class="chip chip-c" data-ui><span class="chip-k">Filed under</span><span class="chip-v">Q4 purchases</span><span class="tick" aria-hidden="true"></span></li>
+        </ul>
+
+        <div class="hero-foot">
+          <p class="hero-sub">Picture a receipt and AyosPapel reads the TIN, store, and VAT for you. When the quarter ends, your Summary List of Sales and Purchases is already done.</p>
+          <div class="actions">
+            <a class="btn" href="#try">Try reading a receipt</a>
+            <a class="link" href="#how">See how it works</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title" data-reveal>Four stops to the BIR.</h2>
+        <ol class="stages" data-ui data-reveal>
+          <li class="stage s1">
+            <span class="dur">3 seconds</span>
+            <p><b>First,</b> picture the receipt with the phone you already have.</p>
+          </li>
+          <li class="stage s2">
+            <span class="dur">10 seconds</span>
+            <p><b>Then</b> check what it read and fix anything the ink lost.</p>
+          </li>
+          <li class="stage s3">
+            <span class="dur">The whole quarter, on its own</span>
+            <p><b>After that,</b> it's filed under the right business, month, and quarter. Totals add up as you go.</p>
+          </li>
+          <li class="stage s4">
+            <span class="dur">One click</span>
+            <p><b>Finally,</b> download the SLSP when the quarter closes.</p>
+          </li>
+        </ol>
+        <p class="fil" lang="fil" data-reveal>Hindi na kailangang i-encode isa-isa ang bawat resibo.</p>
+      </div>
+    </section>
+
+    <section class="try" id="try" aria-labelledby="try-title">
+      <div class="wrap">
+        <div class="try-head">
+          <h2 id="try-title" data-reveal>Try it with a sample resibo.</h2>
+          <p data-reveal>Pick a receipt. Watch it get read, check it, then save it to the quarter. The SLSP below fills in as you go.</p>
+        </div>
+
+        <div class="picker" role="group" aria-label="Sample receipts" data-reveal>
+          <button type="button" class="pick" data-id="r1" aria-pressed="false"><span class="pick-name">Sunrise Mini Mart</span><span class="pick-meta">Purchase, ₱1,000.00</span></button>
+          <button type="button" class="pick" data-id="r2" aria-pressed="false"><span class="pick-name">Bayanihan Hardware</span><span class="pick-meta">Purchase, ₱2,464.00</span></button>
+          <button type="button" class="pick" data-id="r3" aria-pressed="false"><span class="pick-name">Sale to Luntian Café</span><span class="pick-meta">Sale, ₱5,600.00</span></button>
+        </div>
+
+        <div class="reader" data-reveal>
+          <div class="receipt-stage">
+            <div class="receipt" id="receipt" data-ui>
+              <p class="receipt-empty">Pick a receipt above to start.</p>
+            </div>
+          </div>
+
+          <div class="readout" data-ui>
+            <h3 class="readout-title">What it read</h3>
+            <dl class="fields" id="fields">
+              <div><dt>Store</dt><dd data-f="store">-</dd></div>
+              <div><dt>TIN</dt><dd data-f="tin">-</dd></div>
+              <div><dt>Address</dt><dd data-f="address">-</dd></div>
+              <div><dt>Date</dt><dd data-f="date">-</dd></div>
+              <div><dt>Vatable</dt><dd data-f="vatable">-</dd></div>
+              <div><dt>VAT 12%</dt><dd data-f="vat">-</dd></div>
+              <div><dt>Total</dt><dd data-f="gross">-</dd></div>
+            </dl>
+            <p class="read-status" id="read-status" role="status"></p>
+            <button type="button" class="btn" id="save" disabled>Save to the quarter</button>
+          </div>
+        </div>
+
+        <div class="slsp" data-ui data-reveal>
+          <div class="slsp-head">
+            <h3>SLSP, 4th quarter 2026 <span class="sample-tag">sample</span></h3>
+            <button type="button" class="btn btn-quiet" id="download" disabled>Download SLSP (.csv)</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Type</th><th scope="col">TIN</th><th scope="col">Registered name</th><th scope="col" class="num">Taxable</th><th scope="col" class="num">VAT</th><th scope="col" class="num">Gross</th></tr>
+              </thead>
+              <tbody id="slsp-rows">
+                <tr class="empty-row"><td colspan="6">No receipts saved yet. Save one above and it lands here.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <dl class="totals">
+            <div><dt>Purchases</dt><dd id="t-pur">₱0.00</dd></div>
+            <div><dt>Input VAT</dt><dd id="t-in">₱0.00</dd></div>
+            <div><dt>Sales</dt><dd id="t-sal">₱0.00</dd></div>
+            <div><dt>Output VAT</dt><dd id="t-out">₱0.00</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <h2 id="features-title" class="axis" data-reveal>The rest, handled.</h2>
+
+        <article class="row" data-reveal>
+          <div class="axis">
+            <h3>A copy before the ink fades</h3>
+            <p>Thermal receipts can go blank within months. The photo is saved with the record the moment you snap it, so the proof stays readable.</p>
+          </div>
+          <figure class="photo p-tall"><img src="assets/thermal-paper.jpg" width="1400" height="1050" alt="A thermal paper receipt turning dark where it was heated" loading="lazy"><figcaption>Thermal paper darkens with heat and fades with time.</figcaption></figure>
+        </article>
+
+        <article class="row" data-reveal>
+          <div class="axis">
+            <h3>Totals whenever you ask</h3>
+            <p>Sales, purchases, and VAT per month and per quarter, already added up. No more adding columns by hand the night before.</p>
+          </div>
+          <div class="ui-totals" data-ui aria-label="Sample quarter totals">
+            <p class="ui-totals-title">Q4 2026, Sunrise Mini Mart</p>
+            <dl>
+              <div><dt>October</dt><dd>₱184,250.00</dd></div>
+              <div><dt>November</dt><dd>₱201,980.00</dd></div>
+              <div><dt>December</dt><dd>₱236,400.00</dd></div>
+              <div class="sum"><dt>Quarter</dt><dd>₱622,630.00</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="row" data-reveal>
+          <div class="axis">
+            <h3>A nudge before every deadline</h3>
+            <p>AyosPapel reminds you before quarterly BIR requirements are due, so nothing gets filed late because someone forgot.</p>
+          </div>
+          <figure class="photo p-wide"><img src="assets/bir-building.jpg" width="1400" height="1050" alt="The Bureau of Internal Revenue National Office building in Quezon City, seen through trees" loading="lazy"><figcaption>BIR National Office, Quezon City.</figcaption></figure>
+        </article>
+
+        <article class="row" data-reveal>
+          <div class="axis">
+            <h3>Each business keeps its own books</h3>
+            <p>Handling more than one business? Each has its own TIN, receipts, and SLSP. They never mix, and you switch between them in one tap.</p>
+          </div>
+          <figure class="photo p-square"><img src="assets/sari-sari-cavite.jpg" width="1400" height="934" alt="A sari-sari store counter in Cavite stocked with detergent sachets" loading="lazy"><figcaption>A sari-sari store in Cavite.</figcaption></figure>
+        </article>
+
+        <article class="row" data-reveal>
+          <div class="axis">
+            <h3>No tokens, no reloading credits</h3>
+            <p>Reading receipts is part of the system. You will never see a counter of scans left or be asked to top up mid-quarter.</p>
+          </div>
+          <figure class="photo p-portrait"><img src="assets/sari-sari-typical.jpg" width="1400" height="934" alt="A neighbourhood store with sachets of coffee and soap hanging over the counter" loading="lazy"><figcaption>Small stores run on small margins.</figcaption></figure>
+        </article>
+      </div>
+    </section>
+
+    <section class="story" id="papers" aria-labelledby="papers-title">
+      <div class="wrap">
+        <h2 id="papers-title" class="story-title" data-reveal>Originals, tracked too.</h2>
+        <ol class="steps">
+          <li class="step"><div class="step-card">
+            <span class="status s-received">Received</span>
+            <h3>Logged at the front desk</h3>
+            <p>Each envelope of receipts gets a reference number and a printed acknowledgement.</p>
+          </div></li>
+          <li class="step"><div class="step-card">
+            <span class="status s-scanned">Scanned</span>
+            <h3>Copied before it fades</h3>
+            <p>The photos attach to the same batch, filed by business and month.</p>
+          </div></li>
+          <li class="step"><div class="step-card">
+            <span class="status s-held">Filed</span>
+            <h3>Kept in a known spot</h3>
+            <p>Cabinet B, drawer 2, held by Joy. Every move is recorded, so it's never a guess.</p>
+          </div></li>
+          <li class="step"><div class="step-card">
+            <span class="status s-released">Released</span>
+            <h3>Returned with a record</h3>
+            <p>Who received the originals, how, and when, with a release acknowledgement.</p>
+          </div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <h2 id="faq-title" class="q soft">Good questions</h2><div></div>
+
+        <h3 class="q" data-reveal>Does it file with the BIR for me?</h3>
+        <p class="a" data-reveal>No. It prepares the SLSP and the totals so they're ready. You still submit through the BIR's own channels, the way you do now.</p>
+
+        <h3 class="q" data-reveal>What if the receipt is faded or blurry?</h3>
+        <p class="a" data-reveal>It shows which fields it couldn't read so you type only those. The photo is kept either way.</p>
+
+        <h3 class="q" data-reveal>Is there a fee every time I scan?</h3>
+        <p class="a" data-reveal>No. There are no tokens or credits. Scanning is part of the system, not a separate charge.</p>
+
+        <h3 class="q" data-reveal>Can my staff use it too?</h3>
+        <p class="a" data-reveal>Yes, with their own invite-only accounts. You decide which businesses each person can see.</p>
+
+        <h3 class="q" data-reveal>Is our data private?</h3>
+        <p class="a" data-reveal>Records and photos are never public and open only after signing in, and each business is kept apart. To read a receipt, its photo is sent to an AI reading service, then stored privately in AyosPapel.</p>
+
+        <h3 class="q" data-reveal>Will it replace our accounting software?</h3>
+        <p class="a" data-reveal>No. It handles receipts, records, and the SLSP, and works alongside whatever you already use for the books.</p>
+      </div>
+    </section>
+
+    <section class="cta" id="start" aria-labelledby="cta-title">
+      <div class="wrap cta-inner">
+        <h2 id="cta-title" data-reveal>Your resibo, sorted.</h2>
+        <div class="cta-foot" data-reveal>
+          <p>One business, one quarter. If it doesn't save time, you've lost nothing.</p>
+          <button type="button" class="btn btn-accent" id="copy-summary">Copy the proposal summary</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <p>AyosPapel is a proposal for Tita's office. Every name, TIN, and amount on this page is sample data.</p>
+        <a class="link" href="#top">Back to top</a>
+      </div>
+      <p class="foot-mark" aria-hidden="true">AyosPapel</p>
+      <div class="foot-meta">
+        <p>Photos via Wikimedia Commons: “Thermal paper” by IIVQ - Tijmen Stam (CC BY-SA 3.0); “Sari-Sari Store Cavite” by Glen from United States (CC BY 2.0); “Typical sari-sari store” by John Martin Perry (CC BY-SA 3.0); “Bureau of Internal Revenue (Philippines) Building 40” by Video13 (CC BY-SA 4.0).</p>
+        <p>Philippines, 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="ui.js" defer></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

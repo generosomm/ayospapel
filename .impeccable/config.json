@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "landing/index.html"
+        ],
+        "createdAt": "2026-10-20T11:51:03.195Z",
+        "reason": "Claude verified in screenshots: full-bleed try/cta sections are inset by the .wrap gutter (16-32px) and section padding; static scan cannot see .wrap"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "landing/styles.css"
+        ],
+        "createdAt": "2026-10-20T11:51:03.348Z",
+        "reason": "Claude verified: the 3px edge is the scanner light line on unrounded .scan/.bar-scan beams, not a card accent"
+      }
+    ]
+  }
+}
