@@ -1,0 +1,59 @@
+project-root/
+|-- client/
+|   |-- public/
+|   `-- src/
+|       |-- assets/
+|       |-- components/ui/
+|       |-- layouts/
+|       |-- pages/
+|       |-- hooks/
+|       |-- services/
+|       |-- state/
+|       |-- utils/
+|       |-- constants/
+|       `-- config/
+|-- server/
+|   |-- src/
+|   |   |-- controllers/
+|   |   |-- services/
+|   |   |-- models/
+|   |   |-- routes/
+|   |   |-- middlewares/
+|   |   |-- validators/
+|   |   |-- constants/
+|   |   |-- utils/
+|   |   `-- config/
+|   `-- uploads/
+|-- database/
+|   |-- migrations/
+|   |-- seeders/
+|   `-- schema.sql
+|-- context/
+|   |-- PRD.md
+|   |-- ARCHITECTURE.md
+|   |-- SCHEMA.md
+|   |-- DESIGN.md
+|   `-- RULES.md
+|-- prompts/
+|   |-- MASTER_PROMPT.md
+|   `-- SESSION_PROMPTS.md
+|-- docs/
+|   |-- decisions/
+|   |-- handoffs/
+|   |-- BUILD_PLAN.md
+|   |-- CLIENT_DISCOVERY.md
+|   |-- API.md
+|   |-- DEPLOYMENT.md
+|   `-- CHANGELOG.md
+|-- tests/
+|   |-- unit/
+|   |-- integration/
+|   |-- e2e/
+|   `-- fixtures/
+|-- scripts/
+|-- project-answers.json
+|-- .env.example
+|-- .gitignore
+`-- README.md
+
+Adapt framework-specific filenames inside these stable responsibility folders, but keep every top-level contract folder in every project. If a layer is inactive, retain its folder with a short README explaining why.
